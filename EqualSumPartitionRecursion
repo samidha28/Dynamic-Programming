@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool check(vector<int>v, int n, int s){
+    
+    if(s==0)
+        return true;
+    if(n==0)
+        return false;
+    
+    if(v[n-1]>s)
+        return check(v, n-1, s);
+    else{
+        return check(v,n-1, s) || check(v, n-1, s-v[n-1]);
+    }
+}
+
+int main(){
+    int n,a,sum=0;
+    cout <<"Enter length of array: ";
+    cin>>n;
+    cout<<"Enter array elements : ";
+    vector<int>v;
+    for(int i=0;i<n;i++){
+        cin>>a;
+        sum+=a;
+        v.push_back(a);
+    }
+    
+    if(sum%2!=0)
+         cout<<"No equal sum partition impossible";
+    
+    else{
+            if(check(v, n, sum/2))
+                cout<<"Yes equal sum partition possible";
+             else
+                cout<<"No equal sum partition impossible";
+        }
+    return 0;
+}

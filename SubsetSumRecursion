@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool check(vector<int>v, int n, int s){
+    if(s==0)
+        return true;
+    if(n==0)
+        return false;
+        
+    if(v[n-1]>s)
+       return check(v, n-1, s);
+    else
+       return check(v, n-1, s-v[n-1]) || check(v, n-1, s);
+}
+
+int main(){
+        
+         int n,a,sum;
+    cout<<"Enter length of array: ";
+    cin>>n;
+    vector<int>v;
+    cout<<"Enter elements: ";
+    for(int i=0;i<n;i++){
+        cin>>a;
+        v.push_back(a);
+    }
+    cout<<"Enter target sum: ";
+    cin>>sum;
+    if(check(v, n, sum))
+        cout<<"YES subset exists";
+    else
+        cout<<"NO subset doesn't exist";
+        return 0;
+}
