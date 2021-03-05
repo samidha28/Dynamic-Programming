@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int findMinDiff (vector<int>v, int n, int sum, int sc){
+    if(n==0)
+        return abs((sum-(2*sc)));
+        
+    return min(findMinDiff(v, n-1, sum, sc),findMinDiff(v, n-1, sum, sc+v[n-1]));
+}
+
+int main(){
+    int n,a,sum=0;
+    cout<<"Enter length of array: ";
+    cin>>n;
+    vector<int>v;
+    cout<<"Enter array elements: ";
+    for(int i=0;i<n;i++){
+        cin>>a;
+        v.push_back(a);
+        sum+=a;
+    }
+    cout<<findMinDiff (v, n, sum, 0);
+    return 0;
+}
