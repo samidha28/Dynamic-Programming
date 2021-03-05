@@ -33,3 +33,7 @@
     
 2. Dynamic Programming Approach - 
      Time complexity : O(n*C)
+
+#Minimum Difference Problem
+1. Recursive approach -
+    Time complexity : O(2^n)
