@@ -32,6 +32,9 @@
     Time complexity : O(2^n)
     
 2. Dynamic Programming Approach - 
+     Time complexity : O(sum*n)
+    
+2. Dynamic Programming Approach - 
      Time complexity : O(n*C)
 
 #Minimum Difference Problem
